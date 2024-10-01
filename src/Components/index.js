@@ -7,4 +7,7 @@ import Message from './Message/Message'
 import Spinner from './Spinner/Spinner'
 import SpinnerFullPage from './Spinner/SpinnerFullPage'
 import User from './User/User'
-export { PageNav, City, CountryItem, Form, Logo, Message, Spinner, SpinnerFullPage, User }
+import Map from './Map/Map'
+import SideBar from "./Sidebar/SideBar"
+import Footer from "./Footer/Footer"
+export { PageNav, City, CountryItem, Form, Logo, Message, Spinner, SpinnerFullPage, User, Map, SideBar, Footer }
