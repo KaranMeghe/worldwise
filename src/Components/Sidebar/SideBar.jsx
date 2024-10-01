@@ -1,13 +1,15 @@
 import { NavLink } from 'react-router-dom'
-import { Logo, Footer } from '../index'
+import { Logo, Footer, AppNav } from '../index'
 import styles from './SideBar.module.css'
+import { Outlet } from 'react-router-dom'
 const SideBar = () => {
     return (
         <div className={styles.sidebar}>
             <NavLink to='/'>
                 <Logo />
             </NavLink>
-            <p>List of cities</p>
+            <AppNav />
+            <Outlet />
             <Footer />
         </div>
     )

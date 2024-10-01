@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout, HomePage, Login, Pricing, Product, Root } from "./Pages";
+import { City, CountryItem, Form } from './Components/index'
 
 
 const router = createBrowserRouter([{
@@ -23,8 +24,26 @@ const router = createBrowserRouter([{
       element: <Login />
     },
     {
-      path: '/app',
-      element: <AppLayout />
+      path: 'app',
+      element: <AppLayout />,
+      children: [
+        {
+          index: true,
+          element: <City />
+        },
+        {
+          path: 'cities',
+          element: <City />
+        },
+        {
+          path: 'countries',
+          element: <CountryItem />
+        },
+        {
+          path: 'form',
+          element: <Form />
+        }
+      ]
     }
 
   ]
