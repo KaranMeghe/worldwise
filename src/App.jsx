@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout, HomePage, Login, Pricing, Product, Root } from "./Pages";
-import { City, CountryItem, Form } from './Components/index'
+import { CityList, CountryItem, Form } from './Components/index'
 
 
 const router = createBrowserRouter([{
@@ -29,11 +29,11 @@ const router = createBrowserRouter([{
       children: [
         {
           index: true,
-          element: <City />
+          element: <CityList />
         },
         {
           path: 'cities',
-          element: <City />
+          element: <CityList />
         },
         {
           path: 'countries',

@@ -1,10 +1,14 @@
 import { SideBar, Map } from "../Components";
+import { CityProvider } from "../Context /CityContext";
 import styles from './AppLayout.module.css';
 
 const AppLayout = () => {
   return (
     <div className={styles.app}>
-      <SideBar />
+      <CityProvider>
+        <SideBar />
+      </CityProvider>
+
       <Map />
     </div>
   )

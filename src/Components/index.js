@@ -1,5 +1,6 @@
 import PageNav from "./PageNav/PageNav"
 import City from './City/City'
+import CityList from "./City/CityList"
 import CountryItem from './Country/CountryItem'
 import Form from './Form/Form'
 import Logo from './Logo/Logo'
@@ -11,4 +12,4 @@ import Map from './Map/Map'
 import SideBar from "./Sidebar/SideBar"
 import Footer from "./Footer/Footer"
 import AppNav from "./AppNav/AppNav"
-export { PageNav, City, CountryItem, Form, Logo, Message, Spinner, SpinnerFullPage, User, Map, SideBar, Footer, AppNav }
+export { PageNav, City, CountryItem, Form, Logo, Message, Spinner, SpinnerFullPage, User, Map, SideBar, Footer, AppNav, CityList }
