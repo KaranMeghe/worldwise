@@ -25,6 +25,18 @@
       "id": 17806751
     },
     {
+      "cityName": "Delhi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 28.7041,
+        "lng": 77.1025
+      },
+      "id": 10006751
+    },
+    {
       "cityName": "Berlin",
       "country": "Germany",
       "emoji": "🇩🇪",
