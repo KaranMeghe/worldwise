@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import { AppLayout, HomePage, Login, Pricing, Product, Root } from "./Pages";
 import { CityList, CountryList, Form, City } from './Components/index'
 
@@ -29,7 +29,8 @@ const router = createBrowserRouter([{
       children: [
         {
           index: true,
-          element: <CityList />
+          element: <Navigate replace to="cities" />
+
         },
         {
           path: 'cities',
