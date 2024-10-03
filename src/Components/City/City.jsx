@@ -1,5 +1,10 @@
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 import styles from "./City.module.css";
+import { useEffect } from "react";
+import { useContext } from "react";
+import CityContext from "../../Context /CityContext";
+import { Spinner } from '../index'
+import { Button } from '../index'
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -10,21 +15,22 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function City() {
-  const { id } = useParams()
-
+  const { id } = useParams();
+  const { currentCity, fetchCity, isLoading } = useContext(CityContext)
   const [searchParams, setSearchParams] = useSearchParams()
-  console.log(searchParams)
   const lat = searchParams.get("lat")
   const lng = searchParams.get("lng")
-  // TEMP DATA
-  const currentCity = {
-    cityName: "Lisbon",
-    emoji: "🇵🇹",
-    date: "2027-10-31T15:59:59.138Z",
-    notes: "My favorite city so far!",
-  };
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    fetchCity(id);
+  }, [id])
 
   const { cityName, emoji, date, notes } = currentCity;
+
+
+  if (isLoading) return <Spinner />
 
   return (
     <div className={styles.city}>
@@ -58,12 +64,13 @@ function City() {
         </a>
       </div>
 
-      {/* <div>
-        <ButtonBack />
-      </div> */}
+      <div className={styles.citybtn}>
+        <Button type="primary" >Add</Button>
+        <Button type="back" className={styles.back} onClick={(e) => { e.preventDefault(); navigate(-1); }}>&larr; Back</Button>
+      </div>
 
       <p>position lat {lat} , lng {lng}</p>
-    </div>
+    </div >
   );
 }
 

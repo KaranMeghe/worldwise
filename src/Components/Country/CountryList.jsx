@@ -36,7 +36,7 @@ const CountryList = () => {
     return (
         <ul className={styles.countryList}>
             {countries.map((country) => {
-                return <CountryItem country={country} key={country.id} />
+                return <CountryItem country={country} key={country.country} />
             })}
         </ul>
     )

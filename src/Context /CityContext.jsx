@@ -8,7 +8,9 @@ const BASE_URL = 'http://localhost:3002'
 const CityProvider = ({ children }) => {
     const [cities, setCities] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [currentCity, setCurrentCity] = useState({})
 
+    // Fetch Cities Data
     useEffect(() => {
         const fetchCities = async () => {
             try {
@@ -26,8 +28,33 @@ const CityProvider = ({ children }) => {
         fetchCities()
     }, [])
 
+    // Fetch Individual City data
+
+    const fetchCity = async (id) => {
+        try {
+            setIsLoading(true)
+            const res = await fetch(`${BASE_URL}/cities/${id}`);
+            const data = await res.json();
+            setCurrentCity(data);
+        } catch {
+            alert("Failed to get data")
+        } finally {
+            setIsLoading(false)
+        }
+    }
+
+    // Delete City from list
+    const deleteCity = (id) => {
+        const updatedCities = cities && cities.filter((city) => {
+            return city.id !== id
+        })
+
+        setCities(updatedCities);
+    }
+
+
     const valueToShare = {
-        cities, setCities, isLoading
+        cities, setCities, isLoading, currentCity, fetchCity, deleteCity
     }
 
     return <CityContext.Provider value={valueToShare}>{children}</CityContext.Provider>

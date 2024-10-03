@@ -50,4 +50,10 @@
 .deleteBtn:hover {
   background-color: var(--color-brand--1);
   color: var(--color-dark--1);
+  padding: 5px;
+}
+
+.cityItemFlex {
+  display: flex;
+  align-items: center;
 }

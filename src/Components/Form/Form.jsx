@@ -54,7 +54,6 @@ function Form() {
 
       <div className={styles.buttons}>
         <Button type="primary">Add</Button>
-        {/* <Link to="/app/cities"><Button type="back" className={styles.back}>&larr; Back</Button></Link> */}
         <Button type="back" className={styles.back} onClick={(e) => { e.preventDefault(); navigate(-1); }}>&larr; Back</Button>
       </div>
     </form >

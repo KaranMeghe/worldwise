@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import { AppLayout, HomePage, Login, Pricing, Product, Root } from "./Pages";
 import { CityList, CountryList, Form, City } from './Components/index'
+import { CityProvider } from "./Context /CityContext";
 
 
 const router = createBrowserRouter([{
@@ -55,7 +56,9 @@ const router = createBrowserRouter([{
 }])
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <CityProvider>
+    <RouterProvider router={router} />
+  </CityProvider>
 }
 
 export default App;
